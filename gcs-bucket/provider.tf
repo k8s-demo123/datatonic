@@ -9,15 +9,9 @@ terraform {
   }
 }
 
-# https://developer.hashicorp.com/terraform/language/settings/backends/gcs
-terraform {
- backend "gcs" {
-   bucket  = "k9s-bucket-tfstate"
-   prefix  = "terraform/state"
- }
-}
-
 provider "google" {
-  project = "datatonic-np"
+  project = "k8s-demo-424320"
   region = "us-central1"
+  zone = "us-central1-a"
+  # credentials = "k8s-demo-key.json"
 }
